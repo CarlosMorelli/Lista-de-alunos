@@ -9,30 +9,30 @@ def fechar_sistema():
 
 def adicionar_aluno(dic: dict):
     if len(dic) >= 10:
-        print('\n❌ Os 10 registros já estão preenchidos')
+        print('\n❌  Os 10 registros já estão preenchidos')
         return
 
     nome = input('\nDigite o nome do aluno: ').strip().title()
     if not nome:
-        print('\n❌ Nome inválido! Por favor, insira um nome válido.')
+        print('\n❌  Nome inválido! Por favor, insira um nome válido.')
         return
 
     if not nome.replace(" ", "").isalpha():
-        print('\n❌ O nome deve conter apenas letras!')
+        print('\n❌  O nome deve conter apenas letras!')
         return
 
     if nome in dic:
-        print('\n❌ Aluno já inserido.')
+        print('\n❌  Aluno já inserido.')
         return
 
     try:
         nota = float(input('Digite a nota do aluno: '))
     except ValueError:
-        print('\n❌ Por favor, insira apenas números.')
+        print('\n❌  Por favor, insira apenas números.')
         return
     
     if nota < 0 or nota > 10:
-        print('\n❌ Nota inválida! A nota deve estar entre 0 e 10.')
+        print('\n❌  Nota inválida! A nota deve estar entre 0 e 10.')
         return
 
     dic[nome] = nota
@@ -50,17 +50,17 @@ def editar_aluno(dic: dict):
 
     nome_novo = input('Digite o novo nome: ').strip().title()
     if not nome_novo:
-        print('\n❌ Nome inválido! Por favor, insira um nome válido.')
+        print('\n❌  Nome inválido! Por favor, insira um nome válido.')
         return
 
     try:
         nota = float(input('Digite a nova nota do aluno: '))
     except ValueError:
-        print('\n❌ Valor inválido! Por favor, insira uma nota numérica.')
+        print('\n❌  Valor inválido! Por favor, insira uma nota numérica.')
         return
 
     if nota < 0 or nota > 10:
-        print('\n❌ Nota inválida! A nota deve estar entre 0 e 10.')
+        print('\n❌  Nota inválida! A nota deve estar entre 0 e 10.')
         return
 
     dic[nome_novo] = dic.pop(nome_antigo)

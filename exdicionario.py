@@ -1,9 +1,19 @@
+#  Carlos Morelli e Maria Eduarda  #
+
 import os
 import time
 
 def fechar_sistema():
-    print('\nFechando sistema...')
-    time.sleep(2)
+    a = "."
+    b = "."
+    for i in range(5):
+        os.system('cls')
+        print('Encerrando' + a)
+        time.sleep(1)
+        a = b + a 
+        if len(a) == 4:
+            a = '.'
+    os.system('cls')    
     print('O sistema foi fechado com sucesso 🖐')
     exit()
 
